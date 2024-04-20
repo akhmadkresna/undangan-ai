@@ -6,6 +6,12 @@
     <title>Undangan Pernikahan</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
 </head>
 <body>
     <div class="container">
@@ -39,8 +45,29 @@
                 <span>Detik</span>
             </div>
         </div>
+        <div id="map" style="height: 400px;"></div>
         <button id="rsvpButton"><span>Konfirmasi Kehadiran</span></button>
+        
     </div>
     <script src="script.js"></script>
+    <script>
+        // var map = L.map('map').setView([-6.2088, 106.8456], 15); // Ganti dengan koordinat lokasi pernikahan Anda dan zoom level
+        var map = L.map('map').setView([-6.984456, 110.409453], 15);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        var marker = L.marker([-6.984456, 110.409453]).addTo(map)
+            .bindPopup('Lokasi Pernikahan')
+            .openPopup();
+        // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        //     maxZoom: 19,
+        // }).addTo(map);
+ 
+        // L.marker([-6.2088, 106.8456]).addTo(map)
+        //     .bindPopup('Lokasi Pernikahan')
+        //     .openPopup();
+    </script>
+    
 </body>
 </html>
