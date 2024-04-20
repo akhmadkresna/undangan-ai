@@ -51,7 +51,7 @@
     </div>
     <script src="script.js"></script>
     <script>
-        // var map = L.map('map').setView([-6.2088, 106.8456], 15); // Ganti dengan koordinat lokasi pernikahan Anda dan zoom level
+        // Ganti dengan koordinat lokasi pernikahan Anda dan zoom level
         var map = L.map('map').setView([-6.984456, 110.409453], 15);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -60,13 +60,6 @@
         var marker = L.marker([-6.984456, 110.409453]).addTo(map)
             .bindPopup('Lokasi Pernikahan')
             .openPopup();
-        // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        //     maxZoom: 19,
-        // }).addTo(map);
- 
-        // L.marker([-6.2088, 106.8456]).addTo(map)
-        //     .bindPopup('Lokasi Pernikahan')
-        //     .openPopup();
     </script>
     
 </body>
